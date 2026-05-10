@@ -9,7 +9,7 @@ using UnityEngine;
 // - SPEED: velocidad de movimiento del proyectil (constante de 10 unidades por segundo)
 public class ProyectileMovement : MonoBehaviour
 {
-    const float SPEED = 10.0f;    // Velocidad de movimiento del proyectil
+    [SerializeField] float SPEED = 10.0f;    // Velocidad de movimiento del proyectil
     
     // Método Update
     // Se ejecuta cada frame. Mueve el proyectil hacia adelante a velocidad constante.

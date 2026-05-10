@@ -14,7 +14,7 @@ using UnityEngine;
 public class ZombieSpawner : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] GameObject zombie;       // Prefab del zombie a generar
+    [SerializeField] GameObject[] zombie;       // Prefab del zombie a generar
 
     [Header("Settings")]
     [SerializeField] float spawnDelay;        // Tiempo entre spawns en segundos
@@ -41,8 +41,10 @@ public class ZombieSpawner : MonoBehaviour
         // Bucle que genera zombies hasta alcanzar el máximo
         while (numZombies < zombieMax)
         {
+            // Escoger de forma aleatoria
+            
             // Instanciar un zombie en la posición del spawner sin rotación
-            Instantiate(zombie, transform.position, Quaternion.identity);
+            Instantiate(zombie[Random.Range(0, zombie.Length)], transform.position, Quaternion.identity);
 
             // Incrementar el contador de zombies generados
             numZombies++;

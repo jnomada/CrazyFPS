@@ -9,7 +9,9 @@ using UnityEngine;
 // - particle: prefab del efecto de partículas a instanciar en el punto de impacto
 public class BulletHit : MonoBehaviour
 {
-    [SerializeField] GameObject particle;    // Efecto de partículas de impacto
+    [SerializeField] GameObject enemyHitParticle;    // Efecto de partículas de impacto
+    [SerializeField] GameObject hitParticle;
+    GameObject particle;
 
     // Método OnCollisionEnter
     // Se ejecuta cuando la bala colisiona con cualquier objeto.
@@ -18,6 +20,15 @@ public class BulletHit : MonoBehaviour
     // - collision: información sobre la colisión que acaba de ocurrir
     void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            particle = enemyHitParticle;
+        }
+        else
+        {
+            particle = hitParticle;
+        }
+
         // Instanciar el efecto de partículas en la posición del impacto
         // Se utiliza Quaternion.identity para no aplicar rotación
         Instantiate(particle, transform.position, Quaternion.identity);

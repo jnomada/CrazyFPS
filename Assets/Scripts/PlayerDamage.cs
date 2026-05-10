@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +15,7 @@ using UnityEngine.UI;
 public class PlayerDamage : MonoBehaviour
 {
     const int MAX_LIFE = 100;               // Vida máxima del jugador
-    [SerializeField] Text txtHealth;        // Texto UI para mostrar la salud
+    [SerializeField] TMP_Text txtHealth;        // Texto UI para mostrar la salud
     
     int health = MAX_LIFE;                  // Salud actual del jugador
     

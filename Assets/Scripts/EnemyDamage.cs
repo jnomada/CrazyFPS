@@ -10,7 +10,7 @@ using UnityEngine;
 // - hitCount: contador de impactos recibidos hasta el momento
 public class EnemyDamage : MonoBehaviour
 {
-    const int HITS_TO_DIE = 3;    // Número de impactos necesarios para morir
+    [SerializeField] int HITS_TO_DIE = 3;    // Número de impactos necesarios para morir
     int hitCount;                  // Contador de impactos recibidos
 
     // Método OnCollisionEnter
@@ -18,6 +18,8 @@ public class EnemyDamage : MonoBehaviour
     // Cuenta los impactos de balas y destruye al enemigo cuando alcanza el límite.
     // Parámetros:
     // - collision: información sobre la colisión que acaba de ocurrir
+
+
     void OnCollisionEnter(Collision collision)
     {
         // Verificar si el objeto que colisionó es una bala

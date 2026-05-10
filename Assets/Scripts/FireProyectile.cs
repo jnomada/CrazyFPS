@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 // Clase Fireproyectile
@@ -13,6 +12,7 @@ public class Fireproyectile : MonoBehaviour
 {
     [SerializeField] GameObject proyectile;   // Prefab del proyectil a disparar
     [SerializeField] float delay;             // Tiempo antes de destruir el proyectil
+    [SerializeField] GameObject fireEffect;
     
     // Método Update
     // Se ejecuta cada frame. Detecta cuando se presiona el botón de disparo y crea
@@ -24,7 +24,7 @@ public class Fireproyectile : MonoBehaviour
         {
             // Instanciar el proyectil en la posición y rotación actual del objeto
             GameObject clone = Instantiate(proyectile, transform.position, transform.rotation);
-
+            Instantiate(fireEffect, transform.position, transform.rotation);
             // Destruir el proyectil después del tiempo especificado
             Destroy(clone, delay);
         }

@@ -18,7 +18,7 @@ public class PowerUpSpawner : MonoBehaviour
     [SerializeField] Transform[] spawnPoints;     // Puntos posibles donde generar power-ups
 
     [Header("Settings")]
-    [SerializeField] float delay;                 // Tiempo entre spawns en segundos
+    [SerializeField] float delay = 5f;                 // Tiempo entre spawns en segundos
 
     GameObject powerUp;                           // Referencia al power-up actual
 
